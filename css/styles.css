@@ -1,1 +1,47 @@
+:root {
+	--alpha: 0.8; // We're changing this value via JS with interaction
+}
 
+$c_base: #191919; // Black
+$c_selection: rgba(255, 0, 139, 0.8); // Hotpink
+
+// You can change the typo color here. Just edit the RGB:
+$c_typo: rgba(255, 255, 255, var(--alpha)); // White
+
+$anim: 0.1s linear;
+
+html, body {
+	height: 100%;
+}
+
+body {
+	background-color: $c_base;
+	margin: 0;
+	overflow-x: hidden;
+}
+
+::selection {
+	background-color: $c_selection;	
+}
+
+.heading {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.typo {
+	color: $c_typo;
+	cursor: default;
+	font-family: 'Oswald', Helvetica, Arial, sans-serif;
+	font-size: 10vmax;
+	font-weight: bold;
+	line-height: 1.2;
+	margin: 0;
+	outline: none;
+	padding: 0 10% 1.2% 10%;
+	text-align: center;
+	text-transform: uppercase;
+	transition: color $anim; // To work with JS
+}
